@@ -27,4 +27,8 @@ export class RosterService {
     this.contestants.push(player);
     return true;
   }
+  
+  getCount() : number {
+    return this.contestants.length;
+  }
 }

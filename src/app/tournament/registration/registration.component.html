@@ -1,3 +1,13 @@
-<p>
-  registration works!
-</p>
+<div class="container">
+  <h2>Register Players</h2>
+  {{ information }}
+  <form (ngSubmit)="registerContestants()" #registrationForm="ngForm">
+  <div *ngFor="let player of players;let i = index; trackBy:trackByFn">
+    <input type="text" name="contestant{{i}}" placeholder="Contestant {{i + 1}}" [(ngModel)]="players[i]">
+  </div>
+  <button type="submit">Register Contestants</button>
+  </form>
+  <button type="submit">Autofill 2 Players</button>
+  <button type="submit">Autofill 4 Players</button>
+  <button type="submit">Autofill 8 Players</button>
+</div>
